@@ -1,0 +1,10 @@
+^D:\PROJECTS\ADS\CINT\BUILD\CMAKEFILES\352639A7D17A1929AD372FC351A5D205\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/ADS/cint -BD:/Projects/ADS/cint/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Projects/ADS/cint/build/cint.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
