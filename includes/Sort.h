@@ -8,6 +8,6 @@
  * @param arr integer array to sort
  * @param size number of elements in array 
 */
-void quicksort(int* arr, int size);
+void quicksort(int arr[], int size);
 
 #endif
