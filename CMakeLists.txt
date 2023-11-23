@@ -9,6 +9,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(${target} LANGUAGES C CXX VERSION 0.0.1)
 
+# Add Configuration file so VERSION is accessible throughout project
+configure_file(cint_version.h.in cint_version.h @ONLY)
+
 # Gather C source files
 file(GLOB_RECURSE sources
   ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c
@@ -21,6 +24,9 @@ include_directories(includes)
 
 # Build project
 add_library(${target} ${src})
+
+# Include generated configuration file
+target_include_directories(${target} PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 
 #Include CTest
 include(CTest)

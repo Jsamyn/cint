@@ -1,0 +1,9 @@
+
+/**
+ * @brief Get the current version of the cint library
+ * @return current version string includeing major.minor.patch
+*/
+inline const char* getCintVersion()
+{
+  return "@cint_VERSION@";
+}
