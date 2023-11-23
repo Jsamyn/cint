@@ -14,6 +14,8 @@ FetchContent_Declare(
   GIT_TAG v1.14.0
 )
 
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # Find test files 
@@ -22,16 +24,14 @@ file(GLOB_RECURSE sources
   *.cpp
 )
 
-message(test = ${sources})
-
 set(tests ${sources})
 
 # Build test project
 add_executable(${target} ${tests})
-
+target_include_directories(${target} PUBLIC ${CMAKE_BINARY_DIR})
 target_link_libraries(${target}
+  cint
   GTest::gtest_main
-  cint 
 )
 
 # Search for Tests

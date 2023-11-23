@@ -63,7 +63,7 @@ void _q_sort(int arr[], int begin, int end)
   _q_sort(arr, p + 1, end);
 }
 
-void quicksort(int arr[], int size)
+void quicksort(int* arr, int size)
 {
   int begin = 0;
   int end = size - 1;
