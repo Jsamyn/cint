@@ -1,5 +1,0 @@
-if(EXISTS "D:/Projects/ADS/cint/build/test/cint_tests[1]_tests.cmake")
-  include("D:/Projects/ADS/cint/build/test/cint_tests[1]_tests.cmake")
-else()
-  add_test(cint_tests_NOT_BUILT cint_tests_NOT_BUILT)
-endif()
