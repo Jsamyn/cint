@@ -11,8 +11,20 @@ enum SortType{
     CountingSort
 };
 
+/**
+ * @brief Sort an integer array 
+ * @param arr integer array to sort
+ * @param size the number of elements in array 
+ * @param type the sorting algorithm to use, default is quicksort 
+*/
 void sort(int* arr, int size, enum SortType type);
 
+/**
+ * @brief Sort an integer array using the quicksort algorithm
+ * @param arr integer array to sort
+ * @param begin starting index of subarray
+ * @param end ending index of subarray 
+*/
 void _quicksort(int* arr, int begin, int end);
 
 /**
