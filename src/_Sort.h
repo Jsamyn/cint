@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 #include <stdlib.h>
+#include "Define.h"
 
 
 /**
@@ -23,6 +24,22 @@ void _quicksort(int* arr, int begin, int end);
  * @param end the ending index of the array 
 */
 void _mergesort(int* arr, int begin, int end);
+
+/**
+ * @brief Determine maximum element in the array 
+ * @param arr the array to search for max
+ * @param size the number of elements in arr
+ * @return max element 
+*/
+int _max(int* arr, int size);
+
+/**
+ * @brief Sort an integer array using counting sort
+ * @param arr the array to sort
+ * @param B array to place sorted elements
+ * @param size the number of elements in arr
+*/
+void _countingSort(int* arr, int* B, int size);
 
 /**
  * @brief Merge two subarrays into a single sorted subarray 

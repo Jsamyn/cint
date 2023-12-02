@@ -118,3 +118,40 @@ void _merge(int* arr, int b, int m, int e)
   free(arr1);
   free(arr2);
 }
+
+int _max(int* arr, int size)
+{
+  int max = INT_MIN;
+  for (int i = 0; i < size; i++)
+  {
+    max = arr[i] > max ? arr[i] : max;
+  }
+
+  return max;
+}
+
+void _countingSort(int* arr, int* B, int size)
+{
+  // Create temp array 
+  int max = _max(arr, size) + 1;
+  int* C = (int*)calloc(max, sizeof(int));
+
+  // Count occurrences 
+  for (int i = 0; i < size; i++)
+  {
+    C[arr[i]]++;
+  }
+
+  // Determine final indices
+  for (int i = 1; i < max; i++)
+  {
+    C[i] += C[i - 1];
+  }
+
+  // Sort 
+  for (int i = 0; i < size; i++)
+  {
+    B[C[arr[i]] - 1] = arr[i];
+    C[arr[i]]--;
+  }
+}
