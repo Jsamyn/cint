@@ -5,13 +5,21 @@
 extern "C" {
 #endif
 
+enum SortType{
+    Quicksort,
+    Mergesort,
+    CountingSort
+};
+
 #include <stdio.h>
+
 /**
- * @brief Sort an integer array using quicksort
+ * @brief Sort an integer array 
  * @param arr integer array to sort
- * @param size number of elements in array 
+ * @param size the number of elements in array 
+ * @param type the sorting algorithm to use, default is quicksort 
 */
-void quicksort(int* arr, int size);
+void sort(int* arr, int size, enum SortType type);
 
 #ifdef __cplusplus
 }

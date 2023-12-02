@@ -5,19 +5,8 @@
 extern "C" {
 #endif
 
-enum SortType{
-    Quicksort,
-    Mergesort,
-    CountingSort
-};
+#include <stdlib.h>
 
-/**
- * @brief Sort an integer array 
- * @param arr integer array to sort
- * @param size the number of elements in array 
- * @param type the sorting algorithm to use, default is quicksort 
-*/
-void sort(int* arr, int size, enum SortType type);
 
 /**
  * @brief Sort an integer array using the quicksort algorithm
@@ -26,6 +15,23 @@ void sort(int* arr, int size, enum SortType type);
  * @param end ending index of subarray 
 */
 void _quicksort(int* arr, int begin, int end);
+
+/**
+ * @brief Sort an integer array using the mergesort algorithm
+ * @param arr the integer array to sort
+ * @param begin the starting index of the array
+ * @param end the ending index of the array 
+*/
+void _mergesort(int* arr, int begin, int end);
+
+/**
+ * @brief Merge two subarrays into a single sorted subarray 
+ * @param arr integer array to merge and sort
+ * @param b beginning index of first subarray 
+ * @param m middle index
+ * @param e ending index
+*/
+void _merge(int* arr, int b, int m, int e);
 
 /**
  * @brief Find the partition index for quicksort

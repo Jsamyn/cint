@@ -8,7 +8,7 @@ TEST(QuicksortTest, SortSuccessful)
   int arr[] = {6, 3, 4, 7, 2};
 
   // Act
-  quicksort(arr, size);
+  sort(arr, size, Quicksort);
 
   // Assert
   EXPECT_EQ(arr[0], 2);
