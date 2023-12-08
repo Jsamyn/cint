@@ -57,7 +57,7 @@ void _dequeue(Queue* q)
 void _resize(Queue* q, int new_size)
 {
   int* new_container = realloc(q->container, new_size);
-  if (new_continer == NULL)
+  if (new_container == NULL)
   {
     printf("Could not resize queue.");
     return;
