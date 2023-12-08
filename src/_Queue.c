@@ -39,3 +39,30 @@ void _enqueue(Queue* q, int value)
   q->container[q->back] = value;
   q->count++;
 }
+
+void _dequeue(Queue* q)
+{
+  // Check if empty 
+  if (q->count == 0)
+  {
+    printf("Queue is empty. Nothing to dequeue");
+    return;
+  }
+
+  int ret_val = q->container[q->front];
+  q->front = q->front == q->size - 1 ? 0 : q->front + 1;
+  q->count--;
+}
+
+void _resize(Queue* q, int new_size)
+{
+  int* new_container = realloc(q->container, new_size);
+  if (new_continer == NULL)
+  {
+    printf("Could not resize queue.");
+    return;
+  }
+
+  q->container = realloc(q->container, new_size);
+  q->size = new_size;
+}
