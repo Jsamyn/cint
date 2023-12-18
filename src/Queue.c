@@ -1,6 +1,8 @@
 #include "Queue.h"
 #include "_Queue.h"
 
+#include "Structures.h"
+
 Queue* create(int size)
 {
   return _create(size);
